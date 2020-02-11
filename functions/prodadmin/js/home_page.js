@@ -8,8 +8,7 @@ function home_page_secured(){
     glPageContent.innerHTML +=`
     <a href='/add' class="btn btn-outline-primary">Add A Product</a>
     <a href='/show' class="btn btn-outline-primary">Show Product</a>
-    <button class ="btn btn-outline-danger" type="button" onclick="logOut()">Log Out</button>
-    <input type ="button" onclick="preview_image(event)";" value ="Profile page" />   
+    <button class ="btn btn-outline-danger" type="button" onclick="logOut()">Log Out</button>  
     `;
 }
 
