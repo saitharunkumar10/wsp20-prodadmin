@@ -9,6 +9,7 @@ function home_page_secured(){
     <a href='/add' class="btn btn-outline-primary">Add A Product</a>
     <a href='/show' class="btn btn-outline-primary">Show Product</a>
     <button class ="btn btn-outline-danger" type="button" onclick="logOut()">Log Out</button>
+    <input type ="button" onclick="preview_image(event)";" value ="Profile page" />   
     `;
 }
 
@@ -20,3 +21,4 @@ async function logOut(){
         window.location.href = '/login'
     }
 }
+

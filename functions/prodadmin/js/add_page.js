@@ -22,19 +22,38 @@ function add_page_secured() {
             Price: <input class="form-control" type="text" id="price" />
             <p id="price_error" style="color:red;" />
         </div>
-        <div class="form-group">
-            Image: <input type="file" id="imageButton" value="upload" />
+        <div id="wrapper">
+            Image: <input type="file" accept="image/*" id="imageButton" value="upload" onchange="preview_image(event)"/>
             <p id="image_error" style="color:red;" />
         </div>
+        <div id="wrapper">
+        <img id="output_image"/>
+</div>
         <button class="btn btn-primary" type="button" onclick="addProduct()">Add</button>
+        
     `;
 
     const imageButton = document.getElementById('imageButton')
     imageButton.addEventListener('change', e => {
         glImageFile2Add = e.target.files[0] 
+        
         // console.log('file upload', e.target.files[0])
     })
+    
+    
 }
+
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('imageButton');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+
 
 async function addProduct() {
     const name = document.getElementById('name').value
